@@ -1,0 +1,33 @@
+spring :
+  profies :
+    active : test
+
+  datasource :
+    url : jdbc:h2:tcp://localhost/~/querydsl
+    username : sa
+    password : sa
+    driver-class-name: org.h2.Driver
+
+  jpa :
+    hibernate :
+      ddl-auto: create
+    properties:
+      hibernate:
+        #show_sql : true
+        format_sql : true
+        use_sql_comments : true   # querydsl  쿼리문
+  data:
+    web :
+      pageable :
+        default-page-size : 10
+        max-page-size : 2000
+        one-indexed-parameters : true
+        #이건 당연히 parameter 1부터 . 근데 쓰지말자. pageable 객체 자체는 0부터 하는데 이건 객체라서 이 설정 영향 안 받음.
+        # 그래서 페이징 인덱스는 0부터 사용하자 그냥
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace #쿼리문에서 ? 대신 실제 값이 보임
+
+
+

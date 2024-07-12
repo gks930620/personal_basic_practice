@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2"
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+    <persistence-unit name="hello">
+        <properties>
+            <!-- 필수 속성 -->
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+
+            <!-- 옵션 -->
+            <property name="hibernate.show_sql" value="true"/>  <!-- 쿼리가 보이게 하는거-->
+            <property name="hibernate.format_sql" value="true"/>  <!--show_sql로 쿼리 보이는거 보기 좋게 줄바꿈 해주는  -->
+            <property name="hibernate.use_sql_comments" value="true"/> <!--/* */ 있는 부분.  이 쿼리가 왜 실행되는지 알려주는   -->
+            <property name="hibernate.hbm2ddl.auto" value="create"/>  <!-- create 지우고 새로생성, create-drop 종료시점에 drop,  update 변경사항만   반영, validate 정상 매핑되었는지만 확인, none  런타임중에 에러날수도..  -->
+            <property name="hibernate.default_batch_fetch_size" value="1000"/>
+
+            <!--<property name="hibernate.id.new_generator_mappings" value="true"/>    이거 없어도  기본키 자동생성 잘되는데.. -->
+        </properties>
+    </persistence-unit>
+</persistence>

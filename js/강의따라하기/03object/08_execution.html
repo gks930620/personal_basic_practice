@@ -1,0 +1,27 @@
+<!--매우중요 exectuion context 완벽하게 이해.  hoisting 현상도 이해가능-->
+
+<script>
+    function one(){
+        console.log('run one');
+        console.log('run one finsished');
+    }
+
+    function two(){
+        console.log('run two');
+        one();
+        console.log('run two finsished');
+    }
+
+    function three(){
+        console.log('run three');
+        two();
+        console.log('run three finsished');
+    }
+three();
+
+</script>
+
+
+
+
+
