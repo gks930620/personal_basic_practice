@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button> ajax 요청</button>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $("button").on("click" , function (){
+        let student={"id" : 3 , "name" : "chang" , "age" : 22};
+        $.ajax({
+            url : "/studentRegist",
+            type : "post",    //http body를 사용하는거기때문에 post여야만 한다.
+            data : student,
+            contentType : "application/json; charset=UTF-8",   //따로 요청타입도 지정해줘야함.
+            success : function(data){
+                alert("성공");
+            }
+        });
+    });
+</script>
+
+
+</html>

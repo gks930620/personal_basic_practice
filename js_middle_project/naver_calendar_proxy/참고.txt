@@ -1,0 +1,4 @@
+DataSource에서  Database 선택후 f4를 누르면 console이 나온다.
+
+
+

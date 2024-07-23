@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naver OAuth Login</title>
+</head>
+<body>
+    <h1>Naver OAuth Login</h1>
+    <button id="login-button">Login with Naver</button>
+
+    <script>
+        document.getElementById('login-button').addEventListener('click', function() {
+            const clientId = 'zmffkdldjsxmID';  //github에 올릴거기때문에 삭제합니다.
+            const redirectUri = 'http://localhost:5500/naver_calendar/after_callback_calendar.html'; // Live Server 주소와 콜백 파일 경로
+
+            const authUrl = `https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}`;
+            window.location.href = authUrl;
+        });
+    </script>
+</body>
+</html>
